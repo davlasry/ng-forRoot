@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StudentsService} from '../../core/students.service';
 
 @Component({
   selector: 'app-lazy',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lazy.component.css']
 })
 export class LazyComponent implements OnInit {
+  students: any[];
 
-  constructor() { }
+  constructor(private studentsService: StudentsService) { }
 
   ngOnInit() {
+    this.students = this.studentsService.getStudents();
   }
 
 }

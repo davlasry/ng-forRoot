@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 
-const students = ['John', 'Ben', 'Max']
+const students = ['John', 'Ben', 'Max'];
 
 @Injectable()
 export class StudentsService {
 
 
-  constructor() { }
+  constructor() {
+    console.log('studentsService instanciated');
+  }
 
   getStudents(): any[] {
     return students;
